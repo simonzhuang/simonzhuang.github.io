@@ -8,32 +8,24 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/Header-Dark.css">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
 	</head>
 	<body>
-		<div class="topnav">
-		  <a class="active" href=""> Simon Zhuang </a>
-		  <a href="about.html">About</a>
-		  <a href="#Projects">Projects</a>
+		<!--Navigation bar-->
+		<div id="nav-placeholder">
 		</div>
+		<script>
+		$(function(){
+		  $("#nav-placeholder").load("nav.html");
+		});
+		</script>
 
-		<!-- Header -->
-			<section id="header">
-				<div class="inner">
-					<h1> <br /> Hi, I'm <strong>Simon</strong>. <br /> Apparently, I have website now</h1>
-					<p>So yeah, I don't know what I'm doing with my life yet.
-					<br />I need another line here to make the first section fill a page
-					<br />Check out my resume here
-					</p>
-					<h3><a href="images/resume.pdf" target="_blank">My Resume</a></h3>
-					<ul class="actions">
-						<li><a href="#Education" class="button scrolly">Learn More</a></li>
-					</ul>
-				</div>
-			</section>
+
+		<!--end of Navigation bar-->
 
 		<!-- One -->
 			<section id="Education" class="main style1">
