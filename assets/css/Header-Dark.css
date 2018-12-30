@@ -1,7 +1,7 @@
 .topnav {
     z-index: 100;
     position:relative;
-    position: fixed; 
+    position: fixed;
     top: 0;
     width: 100%;
 
@@ -9,9 +9,6 @@
     overflow: hidden;
 }
 
-body { 
-    padding-top: 65px; 
-}
 
 /* Style the links inside the navigation bar */
 
@@ -22,6 +19,7 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 14px;
+
 }
 /* Change the color of links on hover */
 .topnav a:hover {
