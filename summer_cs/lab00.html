@@ -1,0 +1,475 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Lab 00</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1 id="logo"><a href="main.html">CS Summer Course 2020</a></h1>
+					<p>Lab 0</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#introduction" class="active">Introduction</a></li>
+						<li><a href="#setup">Setup</a></li>
+						<li><a href="#terminal">Using Terminal</a></li>
+						<li><a href="#organizing">Organizing Files</a></li>
+						<li><a href="#assignments">Doing Assignments</a></li>
+					</ul>
+				</nav>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="introduction">
+								<div class="container">
+										<h2>Introduction</h2>
+									<p> 
+										This lab explains how to use your own computer to complete assignments for this course.	If you need any help at any time through the lab, please feel free to come to office hours or post on piazza.
+
+										This lab looks really long, but it's mostly setup and learning how to use essential tools for this class; these may seem a bit difficult now, but quickly become second nature as we move further into the course.
+									</p>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="setup">
+								<div class="container">
+									<h2>Setup</h2>
+									<h3>Install a Terminal</h3>
+									<h4>MacOS/Linux</h4>
+									<p>If you're on a Mac or are using a form of Linux (such as Ubuntu), you already
+									have a program called <code>Terminal</code> or something similar on your computer.  Open
+									that up and you should be good to go.</p>
+									<h4>Windows</h4>
+									<p>For Windows users, we recommend downloading a terminal called <a href="http://git-scm.com/downloads">Git Bash</a>. You should be able to install Git Bash with most of the default configuration
+									options, with one exception. In the <em>Configuring the terminal emulator to use
+									with Git Bash</em> step, select the second option: <em>Use Windows' default console
+									window</em>. <strong>This is very important! If you do not select this option, your terminal will not work!</strong></p>
+
+									<p><img class="img-responsive center-block" src="https://cs61a.org/lab/lab00/assets/git-bash-options.png" alt="Git Bash configuration options"></p>
+
+									<h3 id="install-python-3">Install Python 3</h3>
+
+									<p>Python 3 is the primary programming language used in this course.
+									Use the instructions below to install the Python 3 interpreter.
+									<br/>
+									(The instructions may feature older versions of Python 3, but the steps are similar.)</p>
+
+
+									<h4 id="linux">Linux</h4>
+
+									<p>Run <code>sudo apt install python3</code> (Ubuntu)
+									or the command for your distro.</p>
+
+
+									<h4 id="macos">macOS</h4>
+									<p>Download and install Python for Mac or Linux <a href="https://www.python.org/downloads/">click here</a>.
+									Refer to this <a href="https://www.youtube.com/watch?v=smHuBHxJdK8">video</a> for additional help on setting up Python.</p>
+									<p>After installing please close and open your Terminal.</p>
+
+									<h4 id="windows">Windows</h4>
+
+									<p>Download Python for Windows <a href="https://www.python.org/ftp/python/3.8.1/python-3.8.1-amd64.exe">here</a>.
+									<strong>make sure to check the "Add Python 3.x to PATH" box</strong>,
+									which will allow you to execute the <code>python</code> command from your terminal.</p>
+
+									<p><img class="img-responsive center-block" src="https://cs61a.org/lab/lab00/assets/python-windows-install-path.png" alt="Windows PATH at setup"></p>
+									<p>After installing please close and open your Terminal.</p>
+
+									<h3 id="install-a-text-editor">Install a text editor</h3>
+
+
+									<p>The <strong>Python interpreter</strong> that you just installed allows you to <em>run</em> Python
+									code. You will also need a <strong>text editor</strong>, where you will <em>write</em> Python code.</p>
+
+									<p>There are many editors out there, each with its own set of features. I recommend <a href="http://www.sublimetext.com/3">Sublime Text 3</a>. Please download and install the appropriate version.</p>
+
+								</div>
+							</section>
+						<!-- Two -->
+							<section id="terminal">
+								<div class="container">
+								<h2 id="using-the-terminal">Using the terminal</h2>
+
+
+								<p>Let's check if everything was installed properly! First, open a terminal window. (If you're on Windows, launch <em>Git-Bash</em> from the Start menu.) <strong>Important:</strong> You should see a <code>$</code> sign, waiting for you to type commands.</p>
+
+								<blockquote><p>If you see a <code>&gt;</code> sign (such as <code>C:\Users\Oski&gt;</code>), you are <strong>not</strong> running Bash;
+								you are in the Windows Command Prompt!
+								Do <em>not</em> use that! Close it, and launch Git-Bash instead. (Do <em>not</em> launch Git-CMD.)</p></blockquote>
+
+								<p><img class="img-responsive center-block" src="https://cs61a.org/lab/lab00/assets/terminal.png" alt="starting the terminal"></p>
+
+								<p>When you first open your terminal, you will start in the home directory.  The
+								<strong>home directory</strong> is represented by the <code>~</code> symbol.</p>
+
+								<blockquote><p>Don't worry if your terminal window doesn't look exactly the same; the
+								important part is that the text on the left-hand side of the <code>$</code> has a
+								<code>~</code> (tilde). That text might also have the name of your computer.
+								<br/>
+								<strong>If you see your home directory instead of <code>~</code>:</strong> Try running <code>echo ~</code>.
+								If it displays the same path, that's also fine.</p></blockquote>
+
+
+								<h4 id="python-interpreter">Python Interpreter</h4>
+
+
+								<p>We can use the terminal to check if your Python 3 interpreter was installed 
+								correctly. Try the following command:</p>
+
+								<pre><code>python3</code></pre>
+
+								<p>If the installation worked, you should see some text printed out about the
+								interpreter followed by <code>&gt;&gt;&gt;</code> on its own line. This is where you can type in Python 
+								code. Try typing some expressions you saw in lecture, or just play around to see 
+								what happens! You can type <code>exit()</code> or <code>Ctrl&#x2d;D</code> to return to your command line.</p>
+
+								<blockquote><p>Windows troubleshooting: if the <code>python3</code> command doesn't run <em>at all</em>:
+								  <br/>
+								  Try <code>python</code>, <code>python -i</code>, <code>py</code>, or <code>py &#x2d;3</code> instead.</p>
+
+								<p>Ask for help if you get stuck!</p></blockquote>
+
+
+								</div>
+							</section>
+
+							<section id="organizing">
+								<div class="container">
+									<h2 id="organizing-your-files">Organizing your files</h2>
+
+
+									<p>In this section, you will learn how to manage files using terminal commands.</p>
+
+									<blockquote><p>Make sure your prompt contains a <code>$</code> somewhere in it and does not begin with <code>&gt;&gt;&gt;</code>. If it begins with <code>&gt;&gt;&gt;</code> you are still in a Python shell, and you need to exit. See above for how.</p></blockquote>
+
+
+									<h3 id="directories">Directories</h3>
+
+
+									<p>The first command you'll use is <code>ls</code>. Try typing it in the terminal:</p>
+
+									<pre><code>ls</code></pre>
+
+									<p>The <code>ls</code> command <strong>l</strong>i<strong>s</strong>ts all the files and folders in the current
+									directory. A <strong>directory</strong> is another name for a folder (such as the
+									<code>Documents</code> folder). Since you're in the home directory right now, you
+									should see the contents of your home directory.</p>
+
+									<blockquote><p>If <code>ls</code> doesn't work, but <code>dir</code> does: <strong>stop</strong>!
+									You've mistakenly opened the Windows Command Prompt!
+									<br/>
+									Exit it, and run <em>Git-Bash</em> instead.</p></blockquote>
+
+
+									<h3 id="changing-directories">Changing directories</h3>
+
+
+									<p>To move into another directory, use the <code>cd</code> command. Let's try moving into your
+									Desktop directory. First, make sure you're in your home directory (check for the
+									<code>~</code> on your command line) and use <code>ls</code> to see if the <code>Desktop</code> directory is present.
+									Try typing the following command into your terminal, which should move you into
+									that directory:</p>
+
+									<pre><code>cd Desktop</code></pre>
+
+									<p>Although, on some Windows accounts, your actual Desktop folder might actually be inside OneDrive:</p>
+
+									<pre><code>cd OneDrive/Desktop</code></pre>
+
+									<p>If you still can't find your Desktop directory, ask a TA or a lab assistant for help.</p>
+
+									<p>There are a few ways to return to the home directory:</p>
+
+									<ul>
+									  <li><code>cd ..</code> (two dots). The <code>..</code> means "the parent directory". In
+									  this case, the parent directory of <code>cs61a</code> is your home
+									  directory, so you can use <code>cd ..</code> to go up one directory.</li>
+									  <li><code>cd ~</code> (the tilde). Remember that <code>~</code> means home directory, so
+									  this command will always change to your home directory.</li>
+									  <li><code>cd</code> (<code>cd</code> on its own). Typing just <code>cd</code> is a shortcut for typing <code>cd ~</code>.</li>
+									</ul>
+
+									<blockquote><p>You do not have to keep your files on your Desktop if you prefer otherwise.
+									Where you keep your files locally will not affect your grade. Do whatever is
+									easiest and most convenient for you!</p></blockquote>
+
+
+									<h3 id="making-new-directories">Making new directories</h3>
+
+
+									<p>The next command is called <code>mkdir</code>, which <strong>m</strong>a<strong>k</strong>es new
+									<strong>dir</strong>ectories. Let's make a directory called <code>cs61a</code> on your Desktop to store
+									all of the assignments for this class:</p>
+
+									<pre><code>mkdir cs61a</code></pre>
+
+									<p>A folder named <code>cs61a</code> will appear on your Desktop. You can verify this by
+									using the <code>ls</code> command again or by simply checking your Desktop.</p>
+
+									<p>At this point, let's create some more directories. First, make sure you are in
+									the <code>~/Desktop/cs61a</code> directory. Then, create folders called <code>projects</code> and <code>lab</code>
+									inside of your <code>cs61a</code> folder:</p>
+
+									<pre><code>cd ~/Desktop/cs61a
+									mkdir projects
+									mkdir lab</code></pre>
+
+									<p>Now if you list the contents of the directory (using <code>ls</code>), you'll see two
+									folders, <code>projects</code> and <code>lab</code>.</p>
+
+									<p><img class="img-responsive center-block" src="https://cs61a.org/lab/lab00/assets/terminal_commands.png" alt="cs61a directory"></p>
+
+
+									<h3 id="downloading-the-assignment">Downloading the assignment</h3>
+
+
+									<p>If you haven't already, download the zip archive, <a href="https://inst.eecs.berkeley.edu/~cs61a/fa16/lab/lab00/lab00.zip">lab00.zip</a>, which
+									contains all the files that you'll need for this lab. Once you've done that, let's
+									find the downloaded file. On most computers, <code>lab00.zip</code> is probably located in a
+									directory called <code>Downloads</code> in your home directory. Use the <code>ls</code> command to
+									check:</p>
+
+									<pre><code>ls ~/Downloads</code></pre>
+
+									<p>If you don't see <code>lab00.zip</code>, ask a TA or lab assistant for help.</p>
+
+
+									<h3 id="extracting-starter-files">Extracting starter files</h3>
+
+
+									<p>You must expand the zip archive before you can work on the lab files.
+									Different operating systems and different browsers have different ways of
+									unzipping. If you don't know how, you can search online.</p>
+
+									<blockquote><p>Using a terminal, you can unzip the zip file from the command line.
+									First, <code>cd</code> into the directory that contains the zip file:</p>
+
+									<pre><code>cd ~/Downloads</code></pre>
+
+									<p>Now, run the <code>unzip</code> command with the name of the zip file:</p>
+
+									<pre><code>unzip lab00.zip</code></pre>
+
+									<p>You might also be able to unzip files without using the terminal by double
+									clicking them in your OS's file explorer.</p></blockquote>
+
+									<p>Once you unzip <code>lab00.zip</code>, you'll have a new folder called <code>lab00</code> which
+									contains the following files (check it out with <code>cd</code> and <code>ls</code>):</p>
+
+									<ul>
+									  <li><code>lab00.py</code>: The template file you'll be adding your code to</li>
+									  <li><code>ok</code>: A program used to test and submit assignments</li>
+									  <li><code>lab00.ok</code>: A configuration file for <code>ok</code></li>
+									</ul>
+
+
+									<h3 id="moving-files">Moving files</h3>
+
+
+									<p>Move the lab files to the lab folder you created earlier:</p>
+
+									<pre><code>mv ~/Downloads/lab00 ~/Desktop/cs61a/lab</code></pre>
+
+									<p>The <code>mv</code> command will <strong>m</strong>o<strong>v</strong>e the <code>~/Downloads/lab00</code> folder
+									into the <code>~/Desktop/cs61a/lab</code> folder.</p>
+
+									<p>Now, go to the <code>lab00</code> folder that you just moved. Try using <code>cd</code> to navigate
+									your own way! If you get stuck, you can use the following command:</p>
+
+									<pre><code>cd ~/Desktop/cs61a/lab/lab00</code></pre>
+
+
+									<h3 id="summary">Summary</h3>
+
+
+									<p>Here is a summary of the commands we just went over for your reference:</p>
+
+									<ul>
+									  <li><code>ls</code>: <strong>l</strong>i<strong>s</strong>ts all files in the current directory</li>
+									  <li><code>cd &lt;path to directory&gt;</code>: <strong>c</strong>hange into the specified <strong>d</strong>irectory</li>
+									  <li><code>mkdir &lt;directory name&gt;</code>: <strong>m</strong>a<strong>k</strong>e a new <strong>dir</strong>ectory with the given name</li>
+									  <li><code>mv &lt;source path&gt; &lt;destination path&gt;</code>: <strong>m</strong>o<strong>v</strong>e the file at the given source to the
+									  given destination</li>
+									</ul>
+
+									<p>Finally, you're ready to start editing the lab files! Don't worry if this seems
+									complicated -- it will get much easier over time. Just keep practicing!
+									You can also take a look at our <a href="/articles/unix.html">UNIX tutorial</a> for a more
+									detailed explanation of terminal commands.</p>
+							</section>
+
+
+						<!-- Four -->
+							<section id="assignments">
+								<div class="container">
+									<h2>Doing the Assignment</h2>
+									<h3>Understand the question</h3>
+									<p>Open up <code>lab00.py</code> in your text editor. You should see something like this:</p>
+
+
+
+									<pre>
+										<code>def twenty_sixteen():
+    &quot;&quot;&quot;Come up with the most creative expression that evaluates to 2016,	
+    using only numbers and the +, *, and &#x2d; operators.
+
+    &gt;&gt;&gt; twenty_sixteen()
+    2016
+    &quot;&quot;&quot;
+<div class="alt solution-1">    return ______
+									</div> </code> </pre>
+
+								<p>The lines in the triple-quotes <code>&quot;&quot;&quot;</code> are called a <strong>docstring</strong>, which is a
+								description of what the function is supposed to do.  When writing code in 61A,
+								you should always read the docstring!</p>
+
+								<p>The lines that begin with <code>&gt;&gt;&gt;</code> called <strong>doctests</strong>. Doctests explain what the
+								function does by showing actual Python code: "if we input this Python code (the
+								lines that say <code>&gt;&gt;&gt;</code>), what should the expected output be (the lines underneath
+								the <code>&gt;&gt;&gt;</code>)?"You should never change the doctests in your assignments!  The only
+								part of your assignments that you'll need to edit is the code. </p>
+
+								<p>In <code>twenty_sixteen</code>,</p>
+
+								<ul>
+								  <li>The docstring tells us to "come up with the most creative expression that
+								  evaluates to 2016," but that we can only use numbers and arithmetic operators
+								  <code>+</code> (add), <code>*</code> (multiply), and <code>&#x2d;</code> (subtract).</li>
+								  <li>The doctest for <code>twenty_sixteen()</code> checks that no matter how we do our
+								  calculation, <code>twenty_sixteen</code> should return the number 2016.</li>
+								</ul>
+								<h3 id="write-code">Write code</h3>
+								<p>Once you understand what the question is asking, you're ready to start writing
+								code! You should replace the underscores in <code>return ______</code> with an expression that
+								evaluates to 2016.  What's the most creative expression you can come up with?</p>
+								<h3 id="run-tests">Run tests</h3>
+										<p>We will use a program called <code>ok</code> to test our code. <code>ok</code> will be
+										included in every assignment in this class.</p>
+
+										<p>Back to the terminal! Make sure you are in the <code>lab00</code> directory we created
+										earlier (remember, the <code>cd</code> command lets you <a href="#changing-directories">change
+										directories</a>).</p>
+
+										<p>In that directory, you can type <code>ls</code> to verify that there are the following
+										three files:</p>
+
+										<ul>
+										  <li><code>lab00.py</code>: the starter file you just edited</li>
+										  <li><code>ok</code>: our testing program</li>
+										  <li><code>lab00.ok</code>: a configuration file for OK</li>
+										</ul>
+
+										<p>Now, let's test our code to make sure it works. You can run <code>ok</code> with this
+										command:</p>
+
+										<pre><code>python3 ok</code></pre>
+
+										<blockquote class="help-windows">
+
+										<p>If you are using Windows and the <code>python3</code> command doesn't work, try using just
+										<code>python</code> or <code>py</code>. If neither of those work, take another look at the video in
+										the section on <a href="#installing-python">installing Python</a> to make sure you are
+										setting up your PATH correctly. Askfor help if you get
+										stuck!</p>
+										</blockquote>
+
+										<p><strong>Note: The first time you run OK, you will be prompted for your bCourses
+										email. Normally, this is used in the Berkeley course to streamline grading. In our case, just type in and sign into any gmail. The OK website will show up, which you can ignore. 
+										</strong></p>
+
+
+										<p>If you wrote your code correctly, we should see a successful test:</p>
+
+										<pre><code>=====================================================================
+Assignment: Lab 0
+OK, version v1.4.1
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;
+Test summary
+    Passed: 1
+    Failed: 0
+[ooooooooook] 100.0% passed</code></pre>
+
+										<p>If you didn't pass the tests, <code>ok</code> will instead show you something like this:</p>
+
+<pre><code>&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;
+Doctests for twenty_sixteen
+
+&gt;&gt;&gt; from lab00 import *
+&gt;&gt;&gt; twenty_sixteen()
+2013
+
+# Error: expected
+#     2016
+# but got
+#     2013
+
+&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;&#x2d;
+Test summary
+    Passed: 0
+    Failed: 1
+[k..........] 0.0% passed</code></pre>
+
+										<p>Fix your code in your text editor until the test passes.</p>
+
+
+
+
+
+
+
+								<h3 id="submitting-assignments">Submitting assignments</h3>
+
+
+								<p>Now that you have completed your first CS assignment, it's time to turn it in. Submit your assignment by emailing the <code>lab00.py</code> file to me. Do not use OK to submit your assignment. </p>
+																</div>
+
+							</section>
+
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Simon Zhuang.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
