@@ -129,13 +129,30 @@ def count_change(amount):
     >>> count_change(100)
     9828
     """
-    total = 0
-    if amount <= 1:
-        return 1
-    for ones in range(0, amount + 1):
-        if (amount - ones) % 2 == 0:
-            total += count_change((amount - ones) // 2)
-    return total
+    largest_coin = 1
+    while largest_coin <= amount:
+        largest_coin *= 2
+    largest_coin /= 2
+​
+    def count(amount, max_coin):
+        if amount == 0:
+            return 1
+        elif amount < 0:
+            return 0
+        elif max_coin < 1:
+            return 0
+        else:
+            return count(amount - max_coin, max_coin) + count(amount, max_coin // 2)
+    return count(amount, largest_coin)
+
+    # Alternative solution
+    #total = 0
+    #if amount <= 1:
+    #    return 1
+    #for ones in range(amount + 1):
+    #    if (amount - ones) % 2 == 0:
+    #        total += count_change((amount - ones) // 2)
+    #return total
 
 
 ###################
